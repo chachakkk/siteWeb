@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CvRouteImport } from './routes/cv'
+import { Route as LiensRouteImport } from './routes/liens'
+import { Route as ProjetRouteImport } from './routes/projet'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CvRoute = CvRouteImport.update({
+  id: '/cv',
+  path: '/cv',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiensRoute = LiensRouteImport.update({
+  id: '/liens',
+  path: '/liens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetRoute = ProjetRouteImport.update({
+  id: '/projet',
+  path: '/projet',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
+  '/liens': typeof LiensRoute
+  '/projet': typeof ProjetRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
+  '/liens': typeof LiensRoute
+  '/projet': typeof ProjetRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
+  '/liens': typeof LiensRoute
+  '/projet': typeof ProjetRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/cv' | '/liens' | '/projet'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/cv' | '/liens' | '/projet'
+  id: '__root__' | '/' | '/cv' | '/liens' | '/projet'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CvRoute: typeof CvRoute
+  LiensRoute: typeof LiensRoute
+  ProjetRoute: typeof ProjetRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cv': {
+      id: '/cv'
+      path: '/cv'
+      fullPath: '/cv'
+      preLoaderRoute: typeof CvRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liens': {
+      id: '/liens'
+      path: '/liens'
+      fullPath: '/liens'
+      preLoaderRoute: typeof LiensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projet': {
+      id: '/projet'
+      path: '/projet'
+      fullPath: '/projet'
+      preLoaderRoute: typeof ProjetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CvRoute: CvRoute,
+  LiensRoute: LiensRoute,
+  ProjetRoute: ProjetRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
