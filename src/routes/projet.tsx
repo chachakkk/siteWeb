@@ -16,29 +16,49 @@ export const Route = createFileRoute("/projet")({
 
 // ── PERSONNALISEZ ICI ──────────────────────────────────────────────
 // Présentez vos projets : titre, description, liens, captures d'écran…
+// Dupliquez un bloc « placeholder-box » pour chaque projet.
 // ────────────────────────────────────────────────────────────────────
 
 function Projets() {
   return (
-    <section>
-      <h2 className="section-title">Mes Projets</h2>
+    <div className="animate-rise">
+      <p className="page-kicker">Chapitre 02 — Réalisations</p>
+      <h1 className="page-title">
+        Mes <em>projets</em>
+      </h1>
 
-      <p className="mb-6">
-        Présentez ici vos projets universitaires et personnels.
+      <p className="prose-edito mb-10 max-w-xl">
+        Présentez ici vos projets universitaires et personnels : objectifs,
+        technologies, ce que vous en avez appris.
       </p>
 
-      <div className="placeholder-box mb-6">
-        <strong className="mb-2 block text-foreground">Projet n°1 — Titre de votre projet</strong>
-        Décrivez votre projet ici : objectif, technologies utilisées, ce que
-        vous avez appris…
-        <br />
-        Vous pouvez aussi intégrer une démo, une image ou une vidéo.
-      </div>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="placeholder-box">
+          <span className="placeholder-tag">À remplir</span>
+          <h3 className="mb-2 font-display text-2xl font-bold">Projet n°1</h3>
+          <p className="text-muted-foreground">
+            Titre de votre projet, sa description, les technologies utilisées.
+            Vous pouvez aussi intégrer une démo, une image ou une vidéo.
+          </p>
+        </div>
 
-      <div className="placeholder-box">
-        <strong className="mb-2 block text-foreground">Votre code en ligne</strong>
-        Ajoutez un lien vers votre GitHub, GitLab ou portfolio.
+        <div className="placeholder-box">
+          <span className="placeholder-tag">À remplir</span>
+          <h3 className="mb-2 font-display text-2xl font-bold">Projet n°2</h3>
+          <p className="text-muted-foreground">
+            Dupliquez ce bloc autant de fois que nécessaire pour chacun de vos
+            projets.
+          </p>
+        </div>
+
+        <div className="placeholder-box md:col-span-2">
+          <span className="placeholder-tag">À remplir</span>
+          <h3 className="mb-2 font-display text-2xl font-bold">Votre code en ligne</h3>
+          <p className="text-muted-foreground">
+            Ajoutez un lien vers votre GitHub, GitLab ou portfolio.
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
