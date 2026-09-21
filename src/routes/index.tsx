@@ -23,43 +23,45 @@ export const Route = createFileRoute("/")({
 
 function Accueil() {
   return (
-    <section>
-      <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
-        <div className="photo-circle">
-          Votre
-          <br />
-          photo
-        </div>
+    <div className="animate-rise">
+      <p className="page-kicker">Chapitre 01 — Présentation</p>
+      <h1 className="page-title">
+        Bonjour,
+        <br />
+        moi c'est <em>Votre Nom</em>.
+      </h1>
 
-        <div className="flex-1">
-          <h2 className="section-title">Bienvenue</h2>
-
-          <p className="mb-4">
-            Bonjour ! Je m'appelle <strong>Votre Nom</strong>,<br />
-            je suis [votre statut : étudiant·e, développeur·se, etc.].
+      <div className="flex flex-col-reverse items-start gap-12 sm:flex-row sm:items-center">
+        <div className="prose-edito flex-1">
+          <p>
+            Je suis <strong>[votre statut]</strong> — étudiant·e,
+            développeur·se, artiste… décrivez-vous en une phrase.
           </p>
-
-          <p className="mb-4">
-            Décrivez ici votre parcours, vos études ou votre activité
-            actuelle.
+          <p>
+            Racontez ici votre parcours : vos études, votre activité actuelle,
+            ce qui vous anime au quotidien.
           </p>
-
-          <p className="mb-4">
+          <p>
             Ce site me sert de support pour présenter mes projets et mon
             parcours.
           </p>
-
-          <p className="mb-4">
-            Ajoutez ici vos passions, vos activités ou toute information que
-            vous souhaitez partager.
+          <p>
+            Ajoutez vos passions, vos activités en dehors du travail, ou toute
+            information que vous souhaitez partager.
           </p>
-
-          <p className="mb-4 text-muted-foreground">
-            Cette page est un modèle vierge : remplacez ces textes par vos
-            propres informations.
+          <p className="note-placeholder">
+            Modèle vierge : remplacez ces textes par vos propres informations.
           </p>
         </div>
+
+        <div className="photo-wrap">
+          <div className="photo-circle">
+            Votre
+            <br />
+            photo
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

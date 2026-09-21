@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Globe, Linkedin, Github, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export const Route = createFileRoute("/liens")({
   head: () => ({
@@ -20,30 +20,38 @@ export const Route = createFileRoute("/liens")({
 // ────────────────────────────────────────────────────────────────────
 
 const liens = [
-  { href: "#", label: "LinkedIn", detail: "Votre profil LinkedIn", Icon: Linkedin },
-  { href: "#", label: "GitHub / GitLab", detail: "Vos dépôts de code", Icon: Github },
-  { href: "mailto:votre@email.fr", label: "Email", detail: "votre@email.fr", Icon: Mail },
-  { href: "#", label: "Autre site", detail: "Un autre lien utile", Icon: Globe },
+  { href: "#", label: "LinkedIn", detail: "Votre profil LinkedIn" },
+  { href: "#", label: "GitHub / GitLab", detail: "Vos dépôts de code" },
+  { href: "mailto:votre@email.fr", label: "Email", detail: "votre@email.fr" },
+  { href: "#", label: "Autre site", detail: "Un autre lien utile" },
 ];
 
 function Liens() {
   return (
-    <section>
-      <h2 className="section-title">Liens</h2>
+    <div className="animate-rise">
+      <p className="page-kicker">Chapitre 04 — Ailleurs</p>
+      <h1 className="page-title">
+        Mes <em>liens</em>
+      </h1>
 
-      <p className="mb-6">Retrouvez-moi sur mes réseaux et plateformes :</p>
+      <p className="prose-edito mb-8 max-w-xl">
+        Retrouvez-moi sur mes réseaux et plateformes :
+      </p>
 
-      <div className="flex flex-col gap-3">
-        {liens.map(({ href, label, detail, Icon }) => (
-          <a key={label} href={href} target="_blank" rel="noreferrer" className="link-card">
-            <Icon className="h-5 w-5 text-muted-foreground" />
-            <span>
-              {label}
-              <span className="block text-sm font-normal text-muted-foreground">{detail}</span>
+      <div className="border-t-[1.5px] border-ink">
+        {liens.map(({ href, label, detail }, i) => (
+          <a key={label} href={href} target="_blank" rel="noreferrer" className="link-row">
+            <span className="link-row-label">{label}</span>
+            <span className="link-row-meta">
+              <span>
+                <span className="mr-2 text-vermillon">0{i + 1}</span>
+                {detail}
+              </span>
+              <ArrowUpRight className="h-5 w-5" />
             </span>
           </a>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
