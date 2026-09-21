@@ -14,13 +14,6 @@ export const Route = createFileRoute("/")({
   component: Accueil,
 });
 
-// ── PERSONNALISEZ ICI ──────────────────────────────────────────────
-// Remplacez les textes ci-dessous par votre propre présentation.
-// Pour la photo : déposez votre image dans public/ (ex: public/moi.png)
-// puis remplacez le bloc "Votre photo" par :
-//   <img src="/moi.png" alt="Votre nom" className="photo-circle" />
-// ────────────────────────────────────────────────────────────────────
-
 function Accueil() {
   return (
     <div className="animate-rise">
@@ -28,37 +21,25 @@ function Accueil() {
       <h1 className="page-title">
         Bonjour,
         <br />
-        moi c'est <em>Votre Nom</em>.
+        moi c'est <em>Sacha Dugendre Monmarthe</em>.
       </h1>
 
       <div className="flex flex-col-reverse items-start gap-12 sm:flex-row sm:items-center">
         <div className="prose-edito flex-1">
           <p>
-            Je suis <strong>[votre statut]</strong> — étudiant·e,
-            développeur·se, artiste… décrivez-vous en une phrase.
+            Je suis étudiant deuxième année de license informatique à Paris 8.
           </p>
           <p>
-            Racontez ici votre parcours : vos études, votre activité actuelle,
-            ce qui vous anime au quotidien.
+            J'ai eu mon bac général au Lycée Jules Ferry avec maths et NSI spé. 
           </p>
           <p>
-            Ce site me sert de support pour présenter mes projets et mon
-            parcours.
-          </p>
-          <p>
-            Ajoutez vos passions, vos activités en dehors du travail, ou toute
-            information que vous souhaitez partager.
-          </p>
-          <p className="note-placeholder">
-            Modèle vierge : remplacez ces textes par vos propres informations.
+            Ce site me sert de support pour présenter mes projets, mon cv et mes liens pratiques.
           </p>
         </div>
 
         <div className="photo-wrap">
           <div className="photo-circle">
-            Votre
-            <br />
-            photo
+             <img src="/photo_profil.jpeg" alt="Votre nom" className="photo-circle" />
           </div>
         </div>
       </div>
