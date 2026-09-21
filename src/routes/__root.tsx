@@ -119,8 +119,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      {/* SiteLayout contient l'en-tête, la navigation et le pied de page.
+          Les pages se rendent dans son <Outlet />. */}
+      <SiteLayout />
     </QueryClientProvider>
   );
 }
